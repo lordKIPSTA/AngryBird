@@ -39,9 +39,9 @@ function setup(){
     log4 = new Log(760,120,150, PI/7);
     log5 = new Log(870,120,150, -PI/7);
 
-    bird = new Bird(100,100);
+    bird = new Bird(170,75);
 
-    sling = new SlingShot(bird.body, {x: 200, y: 100})
+    sling = new SlingShot(bird.body, {x: 170, y: 75})
 
 }
 
@@ -79,4 +79,8 @@ function mouseDragged(){
 function mouseReleased(){
     sling.fly()
 }
- 
+ function keyPressed() {
+     if (keyCode === 32){
+         sling.attach(bird.body)
+     }
+ }
